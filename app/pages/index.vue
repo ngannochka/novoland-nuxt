@@ -8,11 +8,11 @@ useHead({
 useSeoMeta({
   title: 'НовоЛэнд',
   description: 'НовоЛэнд — это современное производственное предприятие, специализирующееся на полном цикле от идеи и разработки рецептуры до упаковки.',
-
   ogTitle: 'НовоЛэнд',
   ogDescription: 'НовоЛэнд — это современное производственное предприятие, специализирующееся на полном цикле от идеи и разработки рецептуры до упаковки.',
   ogImage: '/ogImage.png',
-  ogUrl: 'https://novoland54.ru/'
+  ogUrl: 'https://novoland54.ru/',
+  titleTemplate: '%s'
 })
 
 const modal = ref(false)
