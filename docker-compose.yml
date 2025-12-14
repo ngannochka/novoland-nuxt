@@ -1,0 +1,14 @@
+services:
+  novoland:
+    image: ghcr.io/ngannochka/novoland-nuxt:latest
+    environment:
+      NUXT_PUBLIC_DIRECTUS_URL: ${NUXT_PUBLIC_DIRECTUS_URL}
+      NUXT_PUBLIC_CAPTCHA_CLIENT_KEY: ${NUXT_PUBLIC_CAPTCHA_CLIENT_KEY}
+      CAPTCHA_SERVER_KEY: ${CAPTCHA_SERVER_KEY}
+      BITRIX_LEAD_ADD_URL: ${BITRIX_LEAD_ADD_URL}
+    networks:
+      - apps
+
+networks:
+  apps:
+    external: true
