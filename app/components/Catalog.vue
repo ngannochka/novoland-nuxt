@@ -83,45 +83,43 @@ onMounted(() => {
         v-for="({ image, title, volume, material, color }, index) in visibleProducts"
         :key="index"
       >
-        <UCard
-          variant="solid"
-          :ui="{
-            root: 'bg-transparent',
-            header: '',
-            body: '',
-            footer: 'flex justify-end'
-          }"
-        >
+        <UPageCard variant="ghost" :ui="{
+          title: 'font-sans text-base text-pretty font-semibold text-[#2A4A5D]',
+          body: 'w-full',
+          footer: 'self-end'
+        }">
           <template #header>
-            <NuxtImg :src="`https://cms.sibbalance.ru/assets/${image}`" :alt="title" class="w-full" />
+            <NuxtImg :src="`https://cms.sibbalance.ru/assets/${image}`" :alt="title" class="w-[clamp(310px,82dvw,336px)]" />
           </template>
 
-          <h3 class="font-sans text-base text-pretty font-semibold text-[#2A4A5D] mb-4">
+          <template #title>
             {{ title }}
-          </h3>
+          </template>
 
-          <dl class="grid grid-cols-[auto_1fr] gap-y-2 font-sans text-[15px] text-pretty text-black">
-            <dt>
-              Объем:
-            </dt>
-            <dd class="text-right">
-              {{ volume }}
-            </dd>
+          <template #description>
+            <dl class="grid grid-cols-[auto_1fr] gap-y-2 font-sans text-[15px] text-pretty text-black">
+              <dt>
+                Объем:
+              </dt>
+              <dd class="text-right">
+                {{ volume }}
+              </dd>
 
-            <dt>
-              Материал:
-            </dt>
-            <dd class="text-right">
-              {{ material }}
-            </dd>
+              <dt>
+                Материал:
+              </dt>
+              <dd class="text-right">
+                {{ material }}
+              </dd>
 
-            <dt>
-              Цвет пленки:
-            </dt>
-            <dd class="text-right">
-              {{ color }}
-            </dd>
-          </dl>
+              <dt>
+                Цвет пленки:
+              </dt>
+              <dd class="text-right">
+                {{ color }}
+              </dd>
+            </dl>
+          </template>
 
           <template #footer>
             <UButton
@@ -131,7 +129,7 @@ onMounted(() => {
               {{ catalogSection?.callbackButton }}
             </UButton>
           </template>
-        </UCard>
+        </UPageCard>
 
         <USeparator
           v-if="!(index + 1 === visibleProducts.length)"
