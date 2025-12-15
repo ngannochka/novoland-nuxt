@@ -45,7 +45,7 @@ const {
   visibleItems: visibleProducts,
   hasMoreItems: hasMoreProducts,
   handleShowMore
-} = useShowMoreItems(6, 3, products.value)
+} = useShowMoreItems(3, 3, products.value)
 
 onMounted(() => {
   const animation = {
@@ -134,7 +134,7 @@ onMounted(() => {
         </UCard>
 
         <USeparator
-          v-if="products && index < products.length - 1"
+          v-if="!(index + 1 === visibleProducts.length)"
           :ui="{
             root: 'opacity-60 sm:hidden',
             border: 'border-[rgba(40,68,92,0.3)]'
