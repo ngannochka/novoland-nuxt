@@ -84,12 +84,13 @@ onMounted(() => {
         :key="index"
       >
         <UPageCard variant="ghost" :ui="{
+          header: 'w-full',
           title: 'font-sans text-base text-pretty font-semibold text-[#2A4A5D]',
           body: 'w-full',
           footer: 'self-end'
         }">
           <template #header>
-            <NuxtImg :src="`https://cms.sibbalance.ru/assets/${image}`" :alt="title" class="w-[clamp(310px,82dvw,336px)]" />
+            <NuxtImg :src="`https://cms.sibbalance.ru/assets/${image}`" :alt="title" class="w-full" />
           </template>
 
           <template #title>
